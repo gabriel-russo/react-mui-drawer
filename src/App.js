@@ -6,9 +6,8 @@ function App() {
     return (
         <Box>
             <Stack direction={"row"}>
-                <Sidebar>
-                    <Main/>
-                </Sidebar>
+                <Sidebar/>
+                <Main/>
             </Stack>
         </Box>
     );

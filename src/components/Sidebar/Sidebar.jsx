@@ -16,7 +16,7 @@ function Sidebar(props) {
     function ContentHandler(ContentState) {
         const {isContentShowing, setContentState} = ContentState();
 
-        switch(open) {
+        switch (open) {
             case false:
                 setOpen(true)
                 setContentState(true)
@@ -60,33 +60,28 @@ function Sidebar(props) {
     }
 
     return (
-        <Box sx={{display: 'flex'}}>
+        <Drawer variant="permanent" anchor="left" open={open}>
             <CssBaseline/>
-            <Drawer variant="permanent" anchor="left" open={open}>
-
-                <Stack direction={"row"}>
-                    <Box flexGrow={2} sx={{mr: 5, padding: 3}}>
-                        {menuContent && <MenuContent/>}
-                        {configContent && <ConfigContent/>}
-                        {searchContent && <SearchContent/>}
-                    </Box>
-                    <Stack spacing={2}
-                           sx={{position: 'absolute', right: 0}}>
-                        <IconButton color={"inherit"} id={"menubtn"} onClick={(e) => ClickHandler(e)}>
-                            <Menu/>
-                        </IconButton>
-                        <IconButton color={"inherit"} id={"configbtn"} onClick={(e) => ClickHandler(e)}>
-                            <Build/>
-                        </IconButton>
-                        <IconButton color={"inherit"} id={"searchbtn"} onClick={(e) => ClickHandler(e)}>
-                            <Search/>
-                        </IconButton>
-                    </Stack>
+            <Stack direction={"row"}>
+                <Box flexGrow={2} sx={{mr: 5, padding: 3}}>
+                    {menuContent && <MenuContent/>}
+                    {configContent && <ConfigContent/>}
+                    {searchContent && <SearchContent/>}
+                </Box>
+                <Stack spacing={2}
+                       sx={{position: 'absolute', right: 0}}>
+                    <IconButton color={"inherit"} id={"menubtn"} onClick={(e) => ClickHandler(e)}>
+                        <Menu/>
+                    </IconButton>
+                    <IconButton color={"inherit"} id={"configbtn"} onClick={(e) => ClickHandler(e)}>
+                        <Build/>
+                    </IconButton>
+                    <IconButton color={"inherit"} id={"searchbtn"} onClick={(e) => ClickHandler(e)}>
+                        <Search/>
+                    </IconButton>
                 </Stack>
-
-            </Drawer>
-            {props.children}
-        </Box>
+            </Stack>
+        </Drawer>
     );
 }
 

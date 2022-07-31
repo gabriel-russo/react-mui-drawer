@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 function Main(props) {
     return (
         <Box component="main" sx={{ flexGrow: 2, p: 3}}>
+            <Typography variant={"h2"} mb={2}>Lorem ipsum dolor?</Typography>
             <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
